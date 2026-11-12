@@ -15,11 +15,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install MinGW
-        run: choco install mingw -y
+      - name: Check Files
+        run: Get-ChildItem -Recurse
 
       - name: Compile C++
-       run: g++ Tugas3.cpp -o program.exe -static -static-libgcc -static-libstdc++
+        run: g++ tugas3.cpp -o program.exe -static -static-libgcc -static-libstdc++
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
